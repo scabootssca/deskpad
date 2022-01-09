@@ -140,9 +140,9 @@ class DeskpadWindow(Gtk.Window):
 		if focused:
 			self.set_opacity(self.opacityActive)
 		else:
-			# # Save it
-			# with open('%s/deskpad.txt' % GLib.get_user_data_dir(), 'w') as fileHandle:
-				# fileHandle.write(self.text.get_buffer().get_text(*self.text.get_buffer().get_bounds()), True)
+			# Save it
+			with open('%s/deskpad.txt' % GLib.get_user_data_dir(), 'w') as fileHandle:
+				fileHandle.write(self.text.get_buffer().get_text(*self.text.get_buffer().get_bounds(), True))
 			self.set_opacity(self.opacityHidden)
 
 	# We override this function to worry about self.stuck
